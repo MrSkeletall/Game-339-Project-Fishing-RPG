@@ -47,9 +47,13 @@
     <Analyzer Include="D:\UNITY\Unity editors\6000.3.9f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\FishObj.cs" />
-    <Compile Include="Assets\Scripts\TopDownControl.cs" />
-    <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Fishing Game\FishingHook.cs" />
+    <Compile Include="Assets\Scripts\Player\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Fishing Game\Fishing Game.cs" />
+    <Compile Include="Assets\Scripts\Fishing Game\FishingRod.cs" />
+    <Compile Include="Assets\Scripts\Fish\FishManager.cs" />
+    <Compile Include="Assets\Scripts\Player\TopDownControl.cs" />
+    <Compile Include="Assets\Scripts\Fish\FishObj.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:\UNITY\Unity editors\6000.3.9f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -469,6 +473,9 @@
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
       <HintPath>D:\UNITY\projects\Game-339-Project-Fishing-RPG\Fishing Rpg\Library\PackageCache\com.unity.collections@aea9d3bd5e19\Unity.Collections.Tests\System.Runtime.CompilerServices.Unsafe\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+      <HintPath>D:\UNITY\projects\Game-339-Project-Fishing-RPG\Fishing Rpg\Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:\UNITY\Unity editors\6000.3.9f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -1042,6 +1049,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="AstarPathfindingProject.csproj">
+      <Project>{e7d9720f-c5da-30f6-6cd1-ab61ed63b9a3}</Project>
+      <Name>AstarPathfindingProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{a828ee9a-a3d7-1b17-d21a-9eecdba988a7}</Project>
+      <Name>PackageToolsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{20e0bd5d-6f4e-4f38-2138-c7847e035734}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
