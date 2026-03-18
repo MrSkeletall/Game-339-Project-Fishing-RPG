@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ArrowFishingGame : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class ArrowFishingGame : MonoBehaviour
     public GameObject leftArrow;
     public GameObject rightArrow;
     public Sprite arrowFlashSprite;
+    public Sprite arrowDefaultSprite;
     public GameObject fishingRod;
 
 
@@ -24,10 +26,20 @@ public class ArrowFishingGame : MonoBehaviour
     private ArrowState[] arrowPattern;
     private int currentPatternIndex = 0;
     private ArrowState currentArrowState;
-    public int MaxPatternLength = 6;
-    public int MinPatternLength = 4;
+    public int MaxPatternLength = 8;
+    public int MinPatternLength = 5;
     public float flashTime = 0.5f;
+
+    private bool isCollectingInput = false;
+    private ArrowState[] playerPattern;
+    private int playerPatternIndex = 0;
     
+    
+    //input actions
+    private InputAction clickAction;
+    private InputAction rightClickAction;
+    private InputAction moveAction;
+    private InputAction jumpAction;
 
 
     private ArrowState[] GeneratePattern()
@@ -51,14 +63,50 @@ public class ArrowFishingGame : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        startArrowGame();
+        clickAction = InputSystem.actions.FindAction("Click");
+        rightClickAction = InputSystem.actions.FindAction("RightClick");
+        moveAction = InputSystem.actions.FindAction("Move");
+        jumpAction = InputSystem.actions.FindAction("Jump");
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (jumpAction.WasPressedThisFrame())
+        {
+            startArrowGame();
+        }
+
+        if (isCollectingInput)
+        {
+            Vector2 moveInput = moveAction.ReadValue<Vector2>();
+            if (moveInput != Vector2.zero && moveAction.WasPressedThisFrame())
+            {
+                ArrowState? input = getPlayerInputToArrowPattern(moveInput);
+                if (input.HasValue)
+                {
+                    playerPattern[playerPatternIndex] = input.Value;
+                    playerPatternIndex++;
+
+                    // Flash the arrow to give feedback
+                    GameObject arrow = getArrowFromState(input.Value);
+                    StartCoroutine(FlashSingleArrow(arrow));
+
+                    // Check if pattern is complete
+                    if (playerPatternIndex >= arrowPattern.Length)
+                    {
+                        isCollectingInput = false;
+                        bool isCorrect = ComparePatterns();
+                        Debug.Log("Pattern " + (isCorrect ? "CORRECT!" : "INCORRECT!"));
+                    }
+                }
+            }
+        }
     }
+
+    
 
     void startArrowGame()
     {
@@ -118,7 +166,73 @@ public class ArrowFishingGame : MonoBehaviour
             // Restore original sprite
             spriteRenderer.sprite = originalSprite;
         }
+
+        // After showing pattern, prompt player to enter it
+        PromptPlayerPattern(pattern);
     }
+
+    private IEnumerator FlashSingleArrow(GameObject arrow)
+    {
+        SpriteRenderer spriteRenderer = arrow.GetComponent<SpriteRenderer>();
+        Sprite originalSprite = spriteRenderer.sprite;
+
+        spriteRenderer.sprite = arrowFlashSprite;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.sprite = originalSprite;
+    }
+
+    private void ResetArrowSprites()
+    {
+        GameObject[] arrows = { upArrow, downArrow, leftArrow, rightArrow };
+        foreach (GameObject arrow in arrows)
+        {
+            arrow.GetComponent<SpriteRenderer>().sprite = arrowDefaultSprite;
+        }
+    }
+
+    private void PromptPlayerPattern(ArrowState[] currentPattern)
+    {
+        ResetArrowSprites();
+        playerPattern = new ArrowState[currentPattern.Length];
+        playerPatternIndex = 0;
+        isCollectingInput = true;
+    }
+
+    private ArrowState? getPlayerInputToArrowPattern(Vector2 moveInput)
+    {
+        // Ensure only one direction is pressed
+        if (moveInput.x == -1 && moveInput.y == 0)
+        {
+            return ArrowState.Left;
+        }
+        if (moveInput.x == 1 && moveInput.y == 0)
+        {
+            return ArrowState.Right;
+        }
+        if (moveInput.x == 0 && moveInput.y == -1)
+        {
+            return ArrowState.Down;
+        }
+        if (moveInput.x == 0 && moveInput.y == 1)
+        {
+            return ArrowState.Up;
+        }
+
+        return null;
+    }
+
+    private bool ComparePatterns()
+    {
+        for (int i = 0; i < arrowPattern.Length; i++)
+        {
+            if (playerPattern[i] != arrowPattern[i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    
 
 
 }

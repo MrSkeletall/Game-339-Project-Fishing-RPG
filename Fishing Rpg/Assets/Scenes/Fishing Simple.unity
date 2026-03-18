@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 186824427}
   - component: {fileID: 186824426}
   m_Layer: 0
-  m_Name: arrow_0
+  m_Name: arrow_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 247251925}
   - component: {fileID: 247251924}
   m_Layer: 0
-  m_Name: RodOfFish_0
+  m_Name: RodOfFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,13 +386,82 @@ Transform:
   m_GameObject: {fileID: 247251923}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.32760632, w: 0.9448144}
-  m_LocalPosition: {x: -7.09, y: -0.85, z: 0}
+  m_LocalPosition: {x: -8.33, y: 1.24, z: 0}
   m_LocalScale: {x: 4.276066, y: 4.276066, z: 4.276066}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2037442757}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -38.247}
+--- !u!1001 &419752517
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -2253911629886400664, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_Name
+      value: trout
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7159
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7159
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.7159
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.18709731
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.07258904
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9453485
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.32606187
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -38.06
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: -8435245712485981826, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}
 --- !u!1 &475914150
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +473,7 @@ GameObject:
   - component: {fileID: 475914152}
   - component: {fileID: 475914151}
   m_Layer: 0
-  m_Name: arrow_0 (3)
+  m_Name: arrow_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -495,7 +564,7 @@ GameObject:
   - component: {fileID: 593665904}
   - component: {fileID: 593665903}
   m_Layer: 0
-  m_Name: arrow_0 (1)
+  m_Name: arrow_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -586,7 +655,7 @@ GameObject:
   - component: {fileID: 1364799618}
   - component: {fileID: 1364799617}
   m_Layer: 0
-  m_Name: arrow_0 (2)
+  m_Name: arrow_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -753,7 +822,7 @@ Transform:
   m_GameObject: {fileID: 1442826025}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -24.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -803,6 +872,59 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &2005049930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2005049932}
+  - component: {fileID: 2005049931}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2005049931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005049930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546db9f0760f52a4c9159de8f82acd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArrowFishingGame
+  upArrow: {fileID: 593665902}
+  downArrow: {fileID: 1364799616}
+  leftArrow: {fileID: 186824425}
+  rightArrow: {fileID: 475914150}
+  arrowFlashSprite: {fileID: 4924718496142980461, guid: 8bd1178d1a7e54849bf4112cf66e9dd3, type: 3}
+  fishingRod: {fileID: 247251923}
+  MaxPatternLength: 6
+  MinPatternLength: 4
+  flashTime: 0.5
+--- !u!4 &2005049932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005049930}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.08285, y: 1.4791, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2037442756
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,3 +967,5 @@ SceneRoots:
   - {fileID: 593665904}
   - {fileID: 1364799618}
   - {fileID: 475914152}
+  - {fileID: 419752517}
+  - {fileID: 2005049932}
