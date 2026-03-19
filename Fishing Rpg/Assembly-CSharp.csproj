@@ -55,6 +55,7 @@
     <Compile Include="Assets\Scripts\Player\TopDownControl.cs" />
     <Compile Include="Assets\Scripts\Fish\FishObj.cs" />
     <Compile Include="Assets\Scripts\FishingMemGame\ArrowFishingGame.cs" />
+    <Compile Include="Assets\Scripts\Fishing Game\FishingLine.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:\UNITY\Unity editors\6000.3.9f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

@@ -10,8 +10,13 @@ public class ArrowFishingGame : MonoBehaviour
     public GameObject rightArrow;
     public Sprite arrowFlashSprite;
     public Sprite arrowDefaultSprite;
+    
+    
+    //visual
     public GameObject fishingRod;
-
+    public GameObject fishingHook;
+    public FishingLine fishingLine;
+    public GameObject fishSprite;
 
     private enum ArrowState
     {
@@ -67,6 +72,11 @@ public class ArrowFishingGame : MonoBehaviour
         rightClickAction = InputSystem.actions.FindAction("RightClick");
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        fishingRod = GameObject.Find("Fishing Rod");
+        fishingHook = GameObject.Find("Hook");
+        fishingLine = fishingHook.GetComponent<FishingLine>();
+        
+        fishingLine.EnableLine(true);
         
         
     }
@@ -99,6 +109,7 @@ public class ArrowFishingGame : MonoBehaviour
                     {
                         isCollectingInput = false;
                         bool isCorrect = ComparePatterns();
+                        CatchFish();
                         Debug.Log("Pattern " + (isCorrect ? "CORRECT!" : "INCORRECT!"));
                     }
                 }
@@ -111,6 +122,7 @@ public class ArrowFishingGame : MonoBehaviour
     void startArrowGame()
     {
         arrowPattern = GeneratePattern();
+        HookEnabled(true);
         currentPatternIndex = 0;
         currentArrowState = arrowPattern[currentPatternIndex];
         StartCoroutine(FlashArrowPattern(arrowPattern));
@@ -232,7 +244,29 @@ public class ArrowFishingGame : MonoBehaviour
         }
         return true;
     }
-    
 
+
+    public void CatchFish()
+    {
+        
+        HookEnabled(false);
+        ThrowVisualFish();
+        
+        
+    }
+
+    private void ThrowVisualFish()
+    {
+        GameObject fish = Instantiate(fishSprite, fishingHook.transform.position, Quaternion.identity);
+        Rigidbody2D rbFish = fish.GetComponent<Rigidbody2D>();
+        rbFish.AddForce(fishingRod.transform.up * 1000f, ForceMode2D.Impulse);
+        
+    }
+    
+    private void HookEnabled(bool state)
+    {
+        fishingHook.SetActive(state);
+        fishingLine.EnableLine(state);
+    }
 
 }
