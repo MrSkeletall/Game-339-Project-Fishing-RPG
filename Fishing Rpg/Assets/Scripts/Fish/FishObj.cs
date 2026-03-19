@@ -4,6 +4,7 @@ using UnityEngine;
 public class FishObj : ScriptableObject
 {
     public string fishName;
+    public int fishPrice;
     public float health;
     public float maxHealth;
     public float speed;

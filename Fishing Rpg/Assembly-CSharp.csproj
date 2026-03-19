@@ -53,7 +53,12 @@
     <Compile Include="Assets\Scripts\Fishing Game\FishingRod.cs" />
     <Compile Include="Assets\Scripts\Fish\FishManager.cs" />
     <Compile Include="Assets\Scripts\Player\TopDownControl.cs" />
+    <Compile Include="Assets\Scripts\Tilemap Code\KeyboardInput.cs" />
     <Compile Include="Assets\Scripts\Fish\FishObj.cs" />
+    <Compile Include="Assets\Scripts\Tilemap Code\SceneTransition.cs" />
+    <Compile Include="Assets\Scripts\FishingMemGame\ArrowFishingGame.cs" />
+    <Compile Include="Assets\Scripts\Tilemap Code\Player.cs" />
+    <Compile Include="Assets\Scripts\Fishing Game\FishingLine.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:\UNITY\Unity editors\6000.3.9f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
