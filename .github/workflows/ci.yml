@@ -1,26 +1,26 @@
 name: CI
 on:
-  push:
-    branches: [“main”]
-  pull_request:
-    branches: [“**“]
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["**"]
 jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: |
-            10.0.x
-      - name: Restore
-        working-directory: “Fishing Rpg”
-        run: dotnet restore “Fishing RPG.sln”
-      - name: Build
-        working-directory: “Fishing Rpg”
-        run: dotnet build “Fishing RPG.sln” --configuration Release --no-restore
-      - name: Test
-        working-directory: “Fishing Rpg”
-        run: dotnet test “Fishing RPG.sln” --configuration Release --no-build --logger “trx;LogFileName=test_results.trx”
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            10.0.x
+      - name: Restore
+        working-directory: "Fishing Rpg"
+        run: dotnet restore "Fishing Rpg.sln"
+      - name: Build
+        working-directory: "Fishing Rpg"
+        run: dotnet build "Fishing Rpg.sln" --configuration Release --no-restore
+      - name: Test
+        working-directory: "Fishing Rpg"
+        run: dotnet test "Fishing Rpg.sln" --configuration Release --no-build --logger "trx;LogFileName=test_results.trx"
