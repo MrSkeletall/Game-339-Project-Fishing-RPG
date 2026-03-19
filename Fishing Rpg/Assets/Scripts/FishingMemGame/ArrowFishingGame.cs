@@ -259,7 +259,7 @@ public class ArrowFishingGame : MonoBehaviour
     {
         GameObject fish = Instantiate(fishSprite, fishingHook.transform.position, Quaternion.identity);
         Rigidbody2D rbFish = fish.GetComponent<Rigidbody2D>();
-        rbFish.AddForce(fishingRod.transform.up * 1000f, ForceMode2D.Impulse);
+        rbFish.AddForce(Vector3.up * 10f, ForceMode2D.Impulse);
         
     }
     
