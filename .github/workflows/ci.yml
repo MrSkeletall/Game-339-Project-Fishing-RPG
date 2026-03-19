@@ -20,7 +20,7 @@ jobs:
         run: dotnet restore "Fishing Rpg.sln"
       - name: Build
         working-directory: "Fishing Rpg"
-        run: dotnet build "Fishing Rpg.sln" --configuration Release --no-restore
+        run: dotnet build "Fishing Rpg.sln"
       - name: Test
         working-directory: "Fishing Rpg"
-        run: dotnet test "Fishing Rpg.sln" --configuration Release --no-build --logger "trx;LogFileName=test_results.trx"
+        run: dotnet test "Fishing Rpg.sln" --logger "trx;LogFileName=test_results.trx"
