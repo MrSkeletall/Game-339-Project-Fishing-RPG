@@ -47,6 +47,7 @@
     <Analyzer Include="D:\UNITY\Unity editors\6000.3.9f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Fish\FishFighter.cs" />
     <Compile Include="Assets\Scripts\Fishing Game\FishingHook.cs" />
     <Compile Include="Assets\Scripts\Player\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Fishing Game\Fishing Game.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Assets\Scripts\Fish\FishObj.cs" />
     <Compile Include="Assets\Scripts\Tilemap Code\SceneTransition.cs" />
     <Compile Include="Assets\Scripts\FishingMemGame\ArrowFishingGame.cs" />
+    <Compile Include="Assets\Scripts\Fish\FishFightManager.cs" />
     <Compile Include="Assets\Scripts\Tilemap Code\Player.cs" />
     <Compile Include="Assets\Scripts\Fishing Game\FishingLine.cs" />
     <Reference Include="UnityEngine">
