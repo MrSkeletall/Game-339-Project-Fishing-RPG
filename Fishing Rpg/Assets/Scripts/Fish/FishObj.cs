@@ -10,5 +10,15 @@ public class FishObj : ScriptableObject
     public float speed;
     public float strength;
     public float luck;
+    public float fishSize = 1f;
+    
+    
+    public Sprite fishSprite;
+
+    public void setFishSize(Transform fish)
+    {
+        fish.localScale = new Vector3(fishSize, fishSize, fishSize);
+    }
+    
 
 }

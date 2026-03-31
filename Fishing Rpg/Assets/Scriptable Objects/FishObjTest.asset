@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: FishObjTest
   m_EditorClassIdentifier: Assembly-CSharp::FishObj
   fishName: dopeFish
+  fishPrice: 0
   health: 5
   maxHealth: 5
   speed: 1
   strength: 1
   luck: 1
+  fishSize: 2
+  fishSprite: {fileID: -8019025211494490069, guid: 7d76ca99fdf1e5d47b3b1a9134bac2b7, type: 3}

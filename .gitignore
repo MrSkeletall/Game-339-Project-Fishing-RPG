@@ -84,3 +84,7 @@ Fishing Rpg/Temp/
 Fishing Rpg/Logs/
 
 Fishing Rpg/UserSettings/Layouts/
+
+Fishing Rpg/obj/
+
+*.dwlt
